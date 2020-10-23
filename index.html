@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: radial-gradient(rgb(158, 165, 158), rgb(100, 100, 105));
+            color: antiquewhite;
+            height: 100vh;           
+            text-align: center;    
+            /* overflow: hidden */         
+        }
+        button{
+            background-image: radial-gradient(rgb(100, 104, 100), rgb(100, 100, 105));
+            color: antiquewhite;
+            font-size: 3vh;
+            padding: 1vh;
+            border-radius: 2vh;
+        }
+        #colors{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body><br>  
+    <div align="center" style="font-size:xx-large">
+        CSS Colors Generator(random)
+    </div><br>
+    <button onclick="generate()">GENERATE</button>
+    <div id="colors"></div>
+    <script>
+        var r, g, b = 0
+        var rgbColor = ""
+        function generate(){
+            r = Math.floor(Math.random() * 256)
+            g = Math.floor(Math.random() * 256)
+            b = Math.floor(Math.random() * 256)
+            rgbColor = "rgb(" + r + ", " + g + ", " + b + ")"
+            
+            var color = document.createElement('div')
+            color.style.height = "12vh"
+            color.style.width = "30vh"
+            color.style.margin = "1vh"
+            color.style.borderRadius = "3vh"
+            color.style.backgroundColor = rgbColor
+            color.style.boxShadow = "5px 3px 8px 3px #333"
+            color.style.textShadow = "0 0 3px #000000, 0 0 2px #000000"
+            var node = document.createTextNode(rgbColor)
+            color.appendChild(node)
+
+            var screen = document.getElementById('colors')
+            screen.appendChild(color)
+        }
+    </script>
+</body>
+</html>
