@@ -10,7 +10,7 @@
             color: antiquewhite;
             height: 100vh;           
             text-align: center;    
-            /* overflow: hidden */         
+            text-shadow: 0 0 3px #000000, 0 0 2px #000000; font-size: large;
         }
         button{
             background-image: radial-gradient(rgb(100, 104, 100), rgb(100, 100, 105));
@@ -30,7 +30,7 @@
     <div align="center" style="font-size:xx-large">
         CSS Colors Generator(random)
     </div>
-    <div id="info" style="text-shadow: 0 0 3px #000000, 0 0 2px #000000; font-size: large;">
+    <div id="info">
             Click on the color to copy RGB value to clipboard
     </div><br>
     <button onclick="generate()">GENERATE</button>
@@ -38,6 +38,7 @@
     <script>
         var r, g, b = 0
         var rgbColor = ""
+        var colorValue = ""
         function generate(){
             r = Math.floor(Math.random() * 256)
             g = Math.floor(Math.random() * 256)
@@ -53,8 +54,9 @@
             color.style.boxShadow = "5px 3px 8px 3px #333"
             color.style.textShadow = "0 0 3px #000000, 0 0 2px #000000"
             color.setAttribute('id', rgbColor)
-            /* color.onclick = copyFunction(rgbColor) */
-            color.setAttribute('onclick', "copyFunction(rgbColor)")
+            colorValue = "copyFunction('" + rgbColor + "')"
+            /* console.log(colorValue) */
+            color.setAttribute('onclick', colorValue)
             var node = document.createTextNode(rgbColor)
             color.appendChild(node)
 
