@@ -6,4 +6,10 @@ HTML page for generating random colors with RGB value
 
 ![](Screen.gif) 
 
+Just an helper when random color is needed.
+16,777,216 different color values can be generated
+r(256) x g(256) x b(256)
+
+* on every color div current rgb color value is displayed to copy it to clipboard for use somwhere else
+
 ![footer](https://capsule-render.vercel.app/api?type=slice&color=auto&height=130&section=footer)
