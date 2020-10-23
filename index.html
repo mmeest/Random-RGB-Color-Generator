@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Color generator</title>
     <style>
         body{
             background-image: radial-gradient(rgb(158, 165, 158), rgb(100, 100, 105));
@@ -29,6 +29,9 @@
 <body><br>  
     <div align="center" style="font-size:xx-large">
         CSS Colors Generator(random)
+    </div>
+    <div id="info" style="text-shadow: 0 0 3px #000000, 0 0 2px #000000; font-size: large;">
+            Click on the color to copy RGB value to clipboard
     </div><br>
     <button onclick="generate()">GENERATE</button>
     <div id="colors"></div>
@@ -49,11 +52,34 @@
             color.style.backgroundColor = rgbColor
             color.style.boxShadow = "5px 3px 8px 3px #333"
             color.style.textShadow = "0 0 3px #000000, 0 0 2px #000000"
+            color.setAttribute('id', rgbColor)
+            /* color.onclick = copyFunction(rgbColor) */
+            color.setAttribute('onclick', "copyFunction(rgbColor)")
             var node = document.createTextNode(rgbColor)
             color.appendChild(node)
 
             var screen = document.getElementById('colors')
             screen.appendChild(color)
+        }
+
+        function copyFunction(str){
+            // Create new element
+            var el = document.createElement('textarea');
+            // Set value (string to be copied)
+            el.value = str;
+            // Set non-editable to avoid focus and move outside of view
+            el.setAttribute('readonly', '');
+            el.style = {position: 'absolute', left: '-9999px'};
+            document.body.appendChild(el);
+            // Select text inside element
+            el.select();
+            // Copy text to clipboard
+            document.execCommand('copy');
+            // Remove temporary element
+            document.body.removeChild(el);
+
+            document.getElementById("info").innerHTML = str + "  copied to clipboard"
+            document.getElementById("info").style.backgroundColor = str
         }
     </script>
 </body>
