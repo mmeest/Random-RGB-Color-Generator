@@ -10,6 +10,9 @@ Just an helper when random color is needed.
 16,777,216 different color values can be generated
 r(256) x g(256) x b(256)
 
-* on every color div current rgb color value is displayed to copy it to clipboard for use somwhere else
+<img src="Screenshot.png" width="500px">
+
+* on every color div current rgb color value is displayed
+* added onclick function on every color to copy it to the clipboard
 
 ![footer](https://capsule-render.vercel.app/api?type=slice&color=auto&height=130&section=footer)
