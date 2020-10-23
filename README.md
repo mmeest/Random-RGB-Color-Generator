@@ -13,6 +13,6 @@ r(256) x g(256) x b(256)
 <img src="Screenshot.png" width="400px">
 
 * on every color div current rgb color value is displayed
-* added onclick function on every color to copy it to the clipboard
+* added onclick function on every color to copy it's value to the clipboard
 
 ![footer](https://capsule-render.vercel.app/api?type=slice&color=auto&height=130&section=footer)
